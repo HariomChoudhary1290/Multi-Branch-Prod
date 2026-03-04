@@ -2,8 +2,10 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
-    return '<h1>Bhai, Website Live Ho Gayi! 🔥</h1>'
+def hello():
+    return "<h1>Bhai, Project Success Ho Gaya! Website Live Hai. 🔥</h1>"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    # Kubernetes Service port 80 ko target kar raha hai, 
+    # isliye hum ise container ke port 80 par chalayenge.
+    app.run(host='0.0.0.0', port=80)
